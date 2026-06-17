@@ -565,7 +565,7 @@ footer strong { color: rgba(255,255,255,0.9); }
           <option value="MMK">摩尔曼斯克 (MMK)</option>
         </select>
       </div>
-      <a href="#" class="ad-cta" onclick="searchFlights();return false;">🔍 搜索最低价</a>
+      <button type="button" class="ad-cta" onclick="searchFlights()" style="border:none;cursor:pointer;font-family:inherit;">🔍 搜索最低价</button>
     </div>
     <p style="margin-top:10px;font-size:11px;color:rgba(255,255,255,0.3);">通过 Travelpayouts 搜索 · 点击链接可能获得佣金 · </p>
   </div>
@@ -961,9 +961,11 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 <script>
 var TP_MARKER = '740332'; /* ← 替换为你的 Travelpayouts marker */
 function searchFlights() {
-  var from = document.getElementById('ad-from').value;
-  var to = document.getElementById('ad-to').value;
-  var url = 'https://tp.media/r?marker=' + TP_MARKER + '&origin=' + from + '&destination=' + to + '&p=1&u=1'; var w = window.open(url, '_blank'); if (!w) location.href = url;
+  var f = document.getElementById('ad-from');
+  var t = document.getElementById('ad-to');
+  if (!f || !t) return console.error('Form elements not found');
+  var url = 'https://tp.media/r?marker=740332&origin=' + f.value + '&destination=' + t.value + '&p=1&u=1';
+  window.open(url, '_blank');
 }
 </script>
 
