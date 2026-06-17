@@ -402,62 +402,20 @@ footer strong { color: rgba(255,255,255,0.9); }
   background: radial-gradient(circle, rgba(0,185,109,0.15) 0%, transparent 70%);
   pointer-events: none;
 }
-.ad-label {
-  font-size: 10px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.4);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-}
-.ad-content {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.ad-icon {
-  font-size: 36px;
-  line-height: 1;
-  flex-shrink: 0;
-}
+
+
+
 .ad-text { flex: 1; min-width: 0; }
-.ad-text h3 {
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 2px;
-}
-.ad-text p {
-  font-size: 13px;
-  color: rgba(255,255,255,0.6);
-  margin: 0;
-}
+
+
 .ad-text p strong { color: var(--warning-light); }
-.ad-cta {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--warning);
-  color: var(--dark);
-  padding: 10px 22px;
-  border-radius: 50px;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: all 0.3s ease;
-}
-.ad-cta:hover {
-  background: var(--warning-light);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(212,168,67,0.4);
-}
+
+
 @media (max-width: 768px) {
   .ad-banner { padding: 0 20px; margin-top: -10px; }
   .ad-inner { padding: 18px 20px; }
-  .ad-content { flex-wrap: wrap; gap: 14px; }
-  .ad-cta { width: 100%; justify-content: center; }
+  
+  
 }
 
 /* === Animations === */
@@ -542,34 +500,18 @@ footer strong { color: rgba(255,255,255,0.9); }
 </div>
 
 <!-- Flight Search (mafengwo-style) -->
-<div class="ad-banner reveal">
-  <div class="ad-inner" style="position:relative;">
-      <span style="position:absolute;top:10px;right:14px;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.6);font-size:11px;padding:2px 10px;border-radius:100px;z-index:5;">广告 · 赞助</span>
-    <div class="ad-label">✈ 特价机票搜索</div>
-    <div class="ad-content" style="flex-wrap:wrap;gap:16px;">
-      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;flex:1;">
-        <select id="ad-from" style="padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.1);color:#fff;font-size:14px;cursor:pointer;">
-          <option value="PEK">北京 (PEK)</option>
-          <option value="SHA">上海 (SHA)</option>
-          <option value="CTU">成都 (CTU)</option>
-          <option value="CAN">广州 (CAN)</option>
-          <option value="SZX">深圳 (SZX)</option>
-        </select>
-        <span style="color:var(--warning-light);font-size:18px;">→</span>
-        <select id="ad-to" style="padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.1);color:#fff;font-size:14px;cursor:pointer;">
-          <option value="MOW">莫斯科 (MOW)</option>
-          <option value="LED">圣彼得堡 (LED)</option>
-          <option value="KZN">喀山 (KZN)</option>
-          <option value="IKT">伊尔库茨克 (IKT)</option>
-          <option value="AER">索契 (AER)</option>
-          <option value="MMK">摩尔曼斯克 (MMK)</option>
-        </select>
-      </div>
-      <button type="button" class="ad-cta" onclick="searchFlights()" style="border:none;cursor:pointer;font-family:inherit;">🔍 搜索最低价</button>
+
+<div class="ad-banner reveal" style="max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:2;">
+  <div style="position:relative;background:white;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,0.06);overflow:hidden;">
+    <span style="position:absolute;top:10px;right:14px;background:var(--primary-light);color:var(--primary-dark);font-size:11px;padding:2px 10px;border-radius:100px;z-index:5;">广告 · 赞助</span>
+    <div style="padding:24px 20px 16px;text-align:center;border-bottom:1px solid #f0f0f0;">
+      <span style="font-size:16px;font-weight:700;color:var(--dark);">✈ 俄罗斯特价机票搜索</span>
     </div>
-    <p style="margin-top:10px;font-size:11px;color:rgba(255,255,255,0.3);">通过 Travelpayouts 搜索 · 点击链接可能获得佣金 · </p>
+    <script async src="https://tpemd.com/content?currency=usd&trs=540419&shmarker=740332&powered_by=true&locale=en&show_header=true&limit=3&primary_color=00AE98&results_background_color=FFFFFF&form_background_color=FFFFFF&campaign_id=111&promo_id=4478" charset="utf-8"></script>
+    <p style="text-align:center;font-size:11px;color:#999;padding:8px 16px 12px;">通过 Travelpayouts 搜索 · 点击链接可能获得佣金</p>
   </div>
 </div>
+
 
 <!-- Destinations -->
 <section id="destinations">
@@ -958,16 +900,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
 <!-- Travelpayouts 机票搜索脚本 -->
-<script>
-var TP_MARKER = '740332'; /* ← 替换为你的 Travelpayouts marker */
-function searchFlights() {
-  var f = document.getElementById('ad-from');
-  var t = document.getElementById('ad-to');
-  if (!f || !t) return console.error('Form elements not found');
-  var url = 'https://tp.media/r?marker=740332&origin=' + f.value + '&destination=' + t.value + '&p=1&u=1';
-  window.open(url, '_blank');
-}
-</script>
+
 
 <script>
 function searchDest() {
