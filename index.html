@@ -567,7 +567,7 @@ footer strong { color: rgba(255,255,255,0.9); }
       </div>
       <a href="#" class="ad-cta" onclick="searchFlights();return false;">🔍 搜索最低价</a>
     </div>
-    <p style="margin-top:10px;font-size:11px;color:rgba(255,255,255,0.3);">通过 Travelpayouts 搜索 · 点击链接可能获得佣金 · 替换 740332 为你的 ID</p>
+    <p style="margin-top:10px;font-size:11px;color:rgba(255,255,255,0.3);">通过 Travelpayouts 搜索 · 点击链接可能获得佣金 · </p>
   </div>
 </div>
 
@@ -963,7 +963,7 @@ var TP_MARKER = '740332'; /* ← 替换为你的 Travelpayouts marker */
 function searchFlights() {
   var from = document.getElementById('ad-from').value;
   var to = document.getElementById('ad-to').value;
-  window.open('https://tp.media/r?marker=' + TP_MARKER + '&origin=' + from + '&destination=' + to + '&p=1&u=1', '_blank');
+  var url = 'https://tp.media/r?marker=' + TP_MARKER + '&origin=' + from + '&destination=' + to + '&p=1&u=1'; var w = window.open(url, '_blank'); if (!w) location.href = url;
 }
 </script>
 
