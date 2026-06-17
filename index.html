@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>逐俄之旅 — 俄罗斯深度旅行攻略</title>
+<!-- Analytics removed for China accessibility -->
+<style>
+:root {
+  --primary-dark: #00995d; --primary-glow: rgba(0,185,109,0.15); --tag-bg: #f0f0f0; --star: #f5a623; --price: #ff6b35;
+  --bg: #f5f6f7;
+  --bg-dark: #e8eaed;
+  --primary: #00b96d;
+  --primary-light: #e6f9f0;
+  --accent: #ff6b35;
+  --accent-dark: #e55a2b;
+  --warning: #f5a623;
+  --warning-light: #fef3e2;
+  --dark: #222222;
+  --dark-light: #444444;
+  --text: #2c2c2c;
+  --text-light: #6b6b6b;
+  --text-muted: #9a9a9a;
+  --white: #ffffff;
+  --shadow: 0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+  --radius: 16px;
+  --radius-sm: 8px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* === Nav === */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 0 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: 700; color: var(--accent); }
+.nav-logo span { font-weight: 400; color: var(--dark); }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { color: var(--text-light); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.03em; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+
+/* === Hero === */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px 80px;
+  position: relative;
+  background:
+    radial-gradient(ellipse 100% 60% at 50% 20%, rgba(212,168,67,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(194,69,46,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 20% 70%, rgba(138,154,122,0.1) 0%, transparent 50%),
+    var(--bg);
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300b96d' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(194,69,46,0.08);
+  border: 1px solid rgba(194,69,46,0.15);
+  border-radius: 100px;
+  padding: 6px 18px 6px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  animation: fade-up 0.8s ease-out;
+}
+.hero-badge .flag { font-size: 16px; }
+.hero h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: var(--dark);
+  animation: fade-up 0.8s ease-out 0.1s both;
+  max-width: 800px;
+}
+.hero h1 em { font-style: italic; color: var(--accent); }
+.hero-sub {
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 20px;
+  max-width: 580px;
+  line-height: 1.6;
+  font-weight: 400;
+  animation: fade-up 0.8s ease-out 0.2s both;
+}
+.hero-cta {
+  margin-top: 40px;
+  display: flex;
+  gap: 14px;
+  animation: fade-up 0.8s ease-out 0.3s both;
+}
+.cta-primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.cta-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(194,69,46,0.3); }
+.cta-secondary {
+  background: transparent;
+  color: var(--dark);
+  border: 1.5px solid rgba(26,42,58,0.2);
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.cta-secondary:hover { border-color: var(--dark); background: rgba(26,42,58,0.04); }
+
+/* === SVG Map Decoration === */
+.hero-map {
+  width: 420px;
+  max-width: 90vw;
+  margin-top: 48px;
+  opacity: 0.8;
+  animation: fade-up 0.8s ease-out 0.4s both;
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Sections === */
+section { padding: 60px 24px; max-width: 1200px; margin: 0 auto; }
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.section-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.section-sub {
+  font-size: 17px;
+  color: var(--text-light);
+  line-height: 1.6;
+  max-width: 560px;
+  margin-bottom: 48px;
+}
+
+/* === Stats Bar === */
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 32px 20px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin: -50px auto 0;
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+}
+.stat-item { text-align: center; }
+.stat-num { font-size: 28px; font-weight: 700; color: var(--accent); font-family: Georgia, 'Times New Roman', serif; }
+.stat-label { font-size: 12px; color: var(--text-muted); margin-top: 2px; letter-spacing: 0.03em; text-transform: uppercase; }
+
+/* === Destinations Grid === */
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+}
+.dest-card {
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dest-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1); transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.dest-img {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+.dest-img img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; }
+.dest-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+.dest-rating {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  color: var(--warning-light);
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.dest-body { padding: 28px; }
+.dest-body h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 22px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+.dest-en { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+.dest-desc { font-size: 14px; color: var(--text-light); line-height: 1.7; margin-bottom: 16px; }
+.dest-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.dest-tags span {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+.route-box {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-top: 12px;
+}
+.route-box h4 { font-size: 12px; font-weight: 600; color: var(--accent); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+.route-box p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
+
+/* === Itinerary === */
+.itinerary { background: var(--white); border-radius: 12px; box-shadow: var(--shadow); overflow: hidden; }
+.itin-card {
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px; display: grid; grid-template-columns: 140px 1fr; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.itin-card:last-child { border-bottom: none; }
+.itin-day {
+  background: var(--dark);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  text-align: center;
+}
+.itin-day .num { font-size: 32px; font-weight: 700; font-family: Georgia, 'Times New Roman', serif; line-height: 1; }
+.itin-day .label { font-size: 11px; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+.itin-content { padding: 20px 24px; }
+.itin-content h4 { font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
+.itin-content p { font-size: 13px; color: var(--text-light); line-height: 1.7; }
+.itin-content .itin-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+.itin-content .itin-tags span { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 100px; background: var(--bg-dark); color: var(--text-muted); }
+
+/* === Tips Grid === */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.tip-card {
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s;
+}
+.tip-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.tip-icon {
+  background: var(--primary-light);
+  border-radius: 50%; font-size: 32px; margin-bottom: 16px; }
+.tip-card h4 { font-size: 16px; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
+.tip-card p { font-size: 14px; color: var(--text-light); line-height: 1.7; }
+
+/* === Gallery Strip === */
+.gallery-strip {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+  margin-top: 40px;
+}
+.gallery-item {
+  aspect-ratio: 1;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--bg-dark);
+}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+
+/* === Footer === */
+footer {
+  background: var(--dark);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+footer strong { color: rgba(255,255,255,0.9); }
+
+
+/* === Affiliate Buttons === */
+.affiliate-btn {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #003580, #0066cc);
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+.affiliate-btn:hover {
+  background: linear-gradient(135deg, #004a9f, #0077ee);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,53,128,0.35);
+}
+/* === Ad Banner === */
+.ad-banner {
+  max-width: 1200px;
+  margin: -20px auto 0;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+.ad-inner {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--dark) 100%);
+  border-radius: 12px;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 8px 32px rgba(26,42,58,0.25);
+  position: relative;
+  overflow: hidden;
+}
+.ad-inner::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(0,185,109,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.ad-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+.ad-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.ad-icon {
+  font-size: 36px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.ad-text { flex: 1; min-width: 0; }
+.ad-text h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 2px;
+}
+.ad-text p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+}
+.ad-text p strong { color: var(--warning-light); }
+.ad-cta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--warning);
+  color: var(--dark);
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+.ad-cta:hover {
+  background: var(--warning-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(212,168,67,0.4);
+}
+@media (max-width: 768px) {
+  .ad-banner { padding: 0 20px; margin-top: -10px; }
+  .ad-inner { padding: 18px 20px; }
+  .ad-content { flex-wrap: wrap; gap: 14px; }
+  .ad-cta { width: 100%; justify-content: center; }
+}
+
+/* === Animations === */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hero { padding: 100px 20px 60px; }
+  .stats-bar { gap: 24px; margin-top: -40px; padding: 20px; flex-wrap: wrap; }
+  section { padding: 60px 20px; }
+  .dest-grid { grid-template-columns: 1fr; }
+  .itin-card {
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px; grid-template-columns: 1fr; }
+  .itin-day { padding: 16px; flex-direction: row; gap: 12px; }
+  .gallery-strip { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+  <meta name="description" content="逐俄之旅 — 最全面的俄罗斯深度旅行攻略，涵盖莫斯科、圣彼得堡、贝加尔湖等目的地">
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-logo">&#127482;&#127466; <span>逐俄之旅</span></div>
+  <div class="nav-links">
+    <a href="#destinations">目的地</a>
+    <a href="#itinerary">推荐路线</a>
+    <a href="#tips">旅行贴士</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-badge"><span class="flag">&#127482;&#127466;</span> Explore Russia · 探索俄罗斯</div>
+  <h1>从红场到贝加尔湖<br>一场穿越 <em>欧亚大陆</em> 的旅程</h1>
+  <p class="hero-sub">九千公里横跨十一个时区，<br>这片土地藏着太多让人屏住呼吸的风景与故事。</p>
+  
+<div class="hero-search reveal" style="margin-top:24px;animation:fade-up 0.8s ease-out 0.3s both;display:flex;gap:12px;background:white;padding:8px;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.08);max-width:600px;width:100%;align-items:center;">
+  <input type="text" placeholder="搜索目的地、攻略、游记..." style="flex:1;border:none;outline:none;font-size:15px;padding:12px 16px;background:transparent;color:#333;font-family:inherit;">
+  <button onclick="searchDest()" style="background:var(--primary);color:white;border:none;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 0.2s;font-family:inherit;">🔍 搜索</button>
+</div>
+<div class="hero-cta">
+    <a href="#destinations" class="cta-primary">开始探索</a>
+    <a href="#itinerary" class="cta-secondary">查看路线</a>
+  </div>
+
+  <!-- SVG map decoration -->
+  <div class="hero-map">
+    <svg viewBox="0 0 600 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M80 180 Q120 100 180 90 Q220 85 250 110 Q280 135 300 120 Q320 105 340 115 Q360 125 380 110 Q400 95 420 105 Q450 120 470 100 Q490 80 510 95 Q530 110 540 90 Q550 70 560 80" stroke="#c2452e" stroke-width="2" stroke-dasharray="4 6" opacity="0.4" fill="none"/>
+      <circle cx="180" cy="90" r="6" fill="#c2452e" opacity="0.8"/><text x="175" y="78" font-size="8" fill="#c2452e" font-weight="600">莫斯科</text>
+      <circle cx="200" cy="78" r="4" fill="#d4a843" opacity="0.8"/><text x="193" y="68" font-size="7" fill="#d4a843">圣彼得堡</text>
+      <circle cx="460" cy="100" r="5" fill="#8a9a7a" opacity="0.8"/><text x="448" y="118" font-size="7" fill="#8a9a7a">贝加尔湖</text>
+      <circle cx="240" cy="130" r="3" fill="#d4a843" opacity="0.6"/><text x="232" y="146" font-size="7" fill="#d4a843">喀山</text>
+      <circle cx="380" cy="80" r="3" fill="#8a9a7a" opacity="0.6"/><text x="365" y="74" font-size="7" fill="#8a9a7a">叶卡捷琳堡</text>
+      <circle cx="260" cy="190" r="3" fill="#c2452e" opacity="0.6"/><text x="242" y="204" font-size="7" fill="#c2452e">索契</text>
+      <circle cx="510" cy="160" r="3" fill="#c2452e" opacity="0.6"/><text x="498" y="174" font-size="7" fill="#c2452e">堪察加</text>
+      <circle cx="120" cy="45" r="3" fill="#8a9a7a" opacity="0.6"/><text x="108" y="38" font-size="7" fill="#8a9a7a">摩尔曼斯克</text>
+      <path d="M186 96 Q220 130 240 130" stroke="#d4a843" stroke-width="1" stroke-dasharray="2 3" opacity="0.4" fill="none"/>
+      <path d="M180 90 Q260 80 380 80" stroke="#c2452e" stroke-width="1" stroke-dasharray="2 3" opacity="0.3" fill="none"/>
+      <path d="M380 80 Q460 95 460 100" stroke="#8a9a7a" stroke-width="1" stroke-dasharray="2 3" opacity="0.3" fill="none"/>
+      <path d="M180 90 Q260 190 260 190" stroke="#c2452e" stroke-width="1" stroke-dasharray="2 3" opacity="0.3" fill="none"/>
+    </svg>
+  </div>
+</div>
+
+<!-- Stats -->
+<div class="stats-bar reveal">
+  <div class="stat-item"><div class="stat-num">8</div><div class="stat-label">经典目的地</div></div>
+  <div class="stat-item"><div class="stat-num">14</div><div class="stat-label">推荐天数</div></div>
+  <div class="stat-item"><div class="stat-num">9000</div><div class="stat-label">公里跨越</div></div>
+  <div class="stat-item"><div class="stat-num">11</div><div class="stat-label">时区穿越</div></div>
+</div>
+
+<!-- Flight Search (mafengwo-style) -->
+<div class="ad-banner reveal">
+  <div class="ad-inner" style="position:relative;">
+      <span style="position:absolute;top:10px;right:14px;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.6);font-size:11px;padding:2px 10px;border-radius:100px;z-index:5;">广告 · 赞助</span>
+    <div class="ad-label">✈ 特价机票搜索</div>
+    <div class="ad-content" style="flex-wrap:wrap;gap:16px;">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;flex:1;">
+        <select id="ad-from" style="padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.1);color:#fff;font-size:14px;cursor:pointer;">
+          <option value="PEK">北京 (PEK)</option>
+          <option value="SHA">上海 (SHA)</option>
+          <option value="CTU">成都 (CTU)</option>
+          <option value="CAN">广州 (CAN)</option>
+          <option value="SZX">深圳 (SZX)</option>
+        </select>
+        <span style="color:var(--warning-light);font-size:18px;">→</span>
+        <select id="ad-to" style="padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.1);color:#fff;font-size:14px;cursor:pointer;">
+          <option value="MOW">莫斯科 (MOW)</option>
+          <option value="LED">圣彼得堡 (LED)</option>
+          <option value="KZN">喀山 (KZN)</option>
+          <option value="IKT">伊尔库茨克 (IKT)</option>
+          <option value="AER">索契 (AER)</option>
+          <option value="MMK">摩尔曼斯克 (MMK)</option>
+        </select>
+      </div>
+      <a href="#" class="ad-cta" onclick="searchFlights();return false;">🔍 搜索最低价</a>
+    </div>
+    <p style="margin-top:10px;font-size:11px;color:rgba(255,255,255,0.3);">通过 Travelpayouts 搜索 · 点击链接可能获得佣金 · 替换 YOUR_MARKER 为你的 ID</p>
+  </div>
+</div>
+
+<!-- Destinations -->
+<section id="destinations">
+  <div class="section-label reveal">目的地</div>
+  <h2 class="section-title reveal">不可错过的 <em>俄罗斯</em></h2>
+  <p class="section-sub reveal">从西到东，从古典到野性，每一站都独一无二。</p>
+
+  <div class="dest-grid">
+
+    <!-- Moscow -->
+          <a href="https://www.booking.com/searchresults.html?ss=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&aid=YOUR_BOOKING_AID" target="_blank" rel="nofollow sponsored" class="affiliate-btn">🏨 搜索莫斯科酒店 · Booking 最低价保证</a>
+    <div class="dest-card reveal">
+      <div class="dest-img" style="background:#1a2a3a;">
+        <div class="dest-img-wrap"><img src="images/moscow.jpg" alt="莫斯科" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <span class="dest-badge">&#x2B50; 必去</span>
+        <span class="dest-rating">&#9733; 4.9</span>
+      </div>
+      <div class="dest-body">
+        <h3>莫斯科</h3>
+        <div class="dest-en">Moscow · &#1052;&#1086;&#1089;&#1082;&#1074;&#1072;</div>
+        <p class="dest-desc">俄罗斯的心脏，红场上圣瓦西里大教堂的彩色穹顶是全世界最经典的画面之一。克里姆林宫、国家历史博物馆、古姆百货——每一步都是历史。</p>
+        <div class="dest-tags">
+          <span>&#128205; 红场</span>
+          <span>&#128332; 克里姆林宫</span>
+          <span>&#127917; 特列季亚科夫画廊</span>
+          <span>&#128653; 莫斯科地铁</span>
+        </div>
+        <div class="route-box">
+          <h4>&#128205; 建议游玩 2-3 天</h4>
+          <p><strong>Day 1:</strong> 红场 → 圣瓦西里大教堂 → 古姆百货 → 亚历山大花园<br>
+          <strong>Day 2:</strong> 克里姆林宫 → 基督救世主大教堂 → 特列季亚科夫画廊<br>
+          <strong>Day 3:</strong> 莫斯科地铁巡游 → 麻雀山观景台 → 莫斯科河游船</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- St Petersburg -->
+          <a href="https://www.booking.com/searchresults.html?ss=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3&aid=YOUR_BOOKING_AID" target="_blank" rel="nofollow sponsored" class="affiliate-btn">🏨 搜索圣彼得堡酒店 · Booking 最低价保证</a>
+    <div class="dest-card reveal">
+      <div class="dest-img" style="background:#b0c4ce;">
+        <div class="dest-img-wrap"><img src="images/st-petersburg.jpg" alt="圣彼得堡" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <span class="dest-badge">&#x1F3F4; 文化之都</span>
+        <span class="dest-rating">&#9733; 4.8</span>
+      </div>
+      <div class="dest-body">
+        <h3>圣彼得堡</h3>
+        <div class="dest-en">Saint Petersburg · &#1057;&#1072;&#1085;&#1082;&#1090;-&#1055;&#1077;&#1090;&#1077;&#1088;&#1073;&#1091;&#1088;&#1075;</div>
+        <p class="dest-desc">俄罗斯的"北方威尼斯"，冬宫博物馆是世界四大博物馆之一。涅瓦大街的欧式建筑、开桥奇观和白夜节，让这座城市充满浪漫气息。</p>
+        <div class="dest-tags">
+          <span>&#127917; 冬宫博物馆</span>
+          <span>&#127979; 彼得宫城</span>
+          <span>&#128693; 涅瓦大街</span>
+          <span>&#127774; 白夜</span>
+        </div>
+        <div class="route-box">
+          <h4>&#128205; 建议游玩 3-4 天</h4>
+          <p><strong>Day 1:</strong> 冬宫广场 → 冬宫博物馆（埃尔米塔日）<br>
+          <strong>Day 2:</strong> 彼得宫城（夏宫）→ 下花园喷泉<br>
+          <strong>Day 3:</strong> 救世主滴血大教堂 → 俄罗斯博物馆 → 涅瓦大街<br>
+          <strong>Day 4:</strong> 叶卡捷琳娜宫（皇村）→ 白夜游船</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Golden Ring -->
+          <a href="https://www.booking.com/searchresults.html?ss=Suzdal&aid=YOUR_BOOKING_AID" target="_blank" rel="nofollow sponsored" class="affiliate-btn">🏨 搜索金环酒店 · Booking 最低价保证</a>
+    <div class="dest-card reveal">
+      <div class="dest-img" style="background:#5a7a4a;">
+        <div class="dest-img-wrap"><img src="images/golden-ring.jpg" alt="金环城市" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <span class="dest-badge">&#128141; 历史环线</span>
+        <span class="dest-rating">&#9733; 4.6</span>
+      </div>
+      <div class="dest-body">
+        <h3>金环城市</h3>
+        <div class="dest-en">Golden Ring · &#1047;&#1086;&#1083;&#1086;&#1090;&#1086;&#1077; &#1082;&#1086;&#1083;&#1100;&#1094;&#1086;</div>
+        <p class="dest-desc">莫斯科东北方一串古老城市的珍珠项链，保留着中世纪俄罗斯最纯粹的面貌。木质建筑、白色教堂、修道院和乡村风光。</p>
+        <div class="dest-tags">
+          <span>&#9962; 苏兹达尔</span>
+          <span>&#128147; 弗拉基米尔</span>
+          <span>&#9962; 谢尔盖耶夫</span>
+          <span>&#127542; 罗斯托夫</span>
+        </div>
+        <div class="route-box">
+          <h4>&#128205; 建议游玩 3-4 天</h4>
+          <p><strong>Day 1:</strong> 莫斯科 → 谢尔盖耶夫镇（圣三一修道院）<br>
+          <strong>Day 2:</strong> 弗拉基米尔（圣母升天大教堂）→ 博戈柳博沃<br>
+          <strong>Day 3:</strong> 苏兹达尔（克里姆林宫、木质建筑博物馆）<br>
+          <strong>Day 4:</strong> 雅罗斯拉夫尔或返回莫斯科</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kazan -->
+          <a href="https://www.booking.com/searchresults.html?ss=%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C&aid=YOUR_BOOKING_AID" target="_blank" rel="nofollow sponsored" class="affiliate-btn">🏨 搜索喀山酒店 · Booking 最低价保证</a>
+    <div class="dest-card reveal">
+      <div class="dest-img" style="background:#4a7a5a;">
+ <div class="dest-img-wrap"><img src="images/kazan.jpg" alt="喀山" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <span class="dest-badge">&#127760; 多元文化</span>
+        <span class="dest-rating">&#9733; 4.7</span>
+      </div>
+      <div class="dest-body">
+        <h3>喀山</h3>
+        <div class="dest-en">Kazan · &#1050;&#1072;&#1079;&#1072;&#1085;&#1100;</div>
+        <p class="dest-desc">伏尔加河畔的"第三首都"，东正教十字架与清真寺新月共存的奇迹之城。喀山克里姆林宫是世界文化遗产，鞑靼文化与俄罗斯风情在这里完美交融。</p>
+        <div class="dest-tags">
+          <span>&#128332; 喀山克里姆林宫</span>
+          <span>&#128330; 库尔·沙里夫清真寺</span>
+          <span>&#127763; 鲍曼步行街</span>
+          <span>&#127860; 鞑靼美食</span>
+        </div>
+        <div class="route-box">
+          <h4>&#128205; 建议游玩 2 天</h4>
+          <p><strong>Day 1:</strong> 喀山克里姆林宫 → 库尔·沙里夫清真寺 → 圣母领报大教堂<br>
+          <strong>Day 2:</strong> 鲍曼步行街 → 鞑靼斯坦国家博物馆 → 伏尔加河滨漫步</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sochi -->
+          <a href="https://www.booking.com/searchresults.html?ss=%D0%A1%D0%BE%D1%87%D0%B8&aid=YOUR_BOOKING_AID" target="_blank" rel="nofollow sponsored" class="affiliate-btn">🏨 搜索索契酒店 · Booking 最低价保证</a>
+    <div class="dest-card reveal">
+      <div class="dest-img" style="background:#4a9aba;">
+        <div class="dest-img-wrap"><img src="images/sochi.jpg" alt="索契" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <span class="dest-badge">&#127965; 度假胜地</span>
+        <span class="dest-rating">&#9733; 4.5</span>
+      </div>
+      <div class="dest-body">
+        <h3>索契</h3>
+        <div class="dest-en">Sochi · &#1057;&#1086;&#1095;&#1080;</div>
+        <p class="dest-desc">黑海之滨的度假天堂，2014 年冬奥会举办地。一边是温暖的海水，一边是高加索山脉的雪峰——一天之内从海滩到滑雪场。</p>
+        <div class="dest-tags">
+          <span>&#127965; 黑海海滩</span>
+          <span>&#127938; 红波利亚纳</span>
+          <span>&#127942; 奥林匹克公园</span>
+          <span>&#127861; 马采斯塔温泉</span>
+        </div>
+        <div class="route-box">
+          <h4>&#128205; 建议游玩 3-4 天</h4>
+          <p><strong>Day 1:</strong> 索契海滨大道 → 黑海沙滩<br>
+          <strong>Day 2:</strong> 红波利亚纳滑雪场（夏季可徒步）<br>
+          <strong>Day 3:</strong> 奥林匹克公园 → 阿洪山观景台<br>
+          <strong>Day 4:</strong> 马采斯塔温泉 → 诺维码头游船</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lake Baikal -->
+          <a href="https://www.booking.com/searchresults.html?ss=Lake+Baikal&aid=YOUR_BOOKING_AID" target="_blank" rel="nofollow sponsored" class="affiliate-btn">🏨 搜索贝加尔湖酒店 · Booking 最低价保证</a>
+    <div class="dest-card reveal">
+      <div class="dest-img" style="background:#3a7aaa;">
+        <div class="dest-img-wrap"><img src="images/baikal.jpg" alt="贝加尔湖" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <span class="dest-badge">&#127748; 自然奇迹</span>
+        <span class="dest-rating">&#9733; 4.9</span>
+      </div>
+      <div class="dest-body">
+        <h3>贝加尔湖</h3>
+        <div class="dest-en">Lake Baikal · &#1041;&#1072;&#1081;&#1082;&#1072;&#1083;</div>
+        <p class="dest-desc">世界上最深、最古老的淡水湖，拥有地球表面五分之一的淡水资源。冬季的蓝冰奇观、夏季的碧蓝湖水——每个季节都有不同的震撼。</p>
+        <div class="dest-tags">
+          <span>&#10052; 蓝冰季（2-3月）</span>
+          <span>&#127754; 奥尔洪岛</span>
+          <span>&#128675; 环湖小火车</span>
+          <span>&#127796; 贝加尔徒步</span>
+        </div>
+        <div class="route-box">
+          <h4>&#128205; 建议游玩 4-5 天</h4>
+          <p><strong>Day 1:</strong> 伊尔库茨克 → 利斯特维扬卡（贝加尔湖博物馆）<br>
+          <strong>Day 2:</strong> 奥尔洪岛（萨满岩、胡日尔村）<br>
+          <strong>Day 3:</strong> 奥尔洪岛北线探险（含伯汗角）<br>
+          <strong>Day 4:</strong> 环贝加尔湖铁路小火车<br>
+          <strong>Day 5:</strong> 返回伊尔库茨克，游览十二月党人博物馆</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kamchatka -->
+          <a href="https://www.booking.com/searchresults.html?ss=Petropavlovsk-Kamchatsky&aid=YOUR_BOOKING_AID" target="_blank" rel="nofollow sponsored" class="affiliate-btn">🏨 搜索堪察加酒店 · Booking 最低价保证</a>
+    <div class="dest-card reveal">
+      <div class="dest-img" style="background:#5a7a8a;">
+        <div class="dest-img-wrap"><img src="images/kamchatka.jpg" alt="堪察加半岛" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <span class="dest-badge">&#127748; 荒野探险</span>
+        <span class="dest-rating">&#9733; 4.8</span>
+      </div>
+      <div class="dest-body">
+        <h3>堪察加半岛</h3>
+        <div class="dest-en">Kamchatka · &#1050;&#1072;&#1084;&#1095;&#1072;&#1090;&#1082;&#1072;</div>
+        <p class="dest-desc">地球上最后一片真正的荒野。300 多座火山（其中 29 座活火山）、间歇泉山谷、棕熊捕鱼的画面——这里是大自然最原始的舞台。</p>
+        <div class="dest-tags">
+          <span>&#127756; 间歇泉山谷</span>
+          <span>&#127754; 阿瓦恰湾</span>
+          <span>&#128059; 棕熊观赏</span>
+          <span>&#127754; 火山徒步</span>
+        </div>
+        <div class="route-box">
+          <h4>&#128205; 建议游玩 5-7 天</h4>
+          <p><strong>Day 1:</strong> 彼得罗巴甫洛夫斯克 → 阿瓦恰湾游船<br>
+          <strong>Day 2:</strong> 直升机前往间歇泉山谷<br>
+          <strong>Day 3:</strong> 穆特诺夫火山徒步<br>
+          <strong>Day 4:</strong> 库页湖熊观察站（季节限定）<br>
+          <strong>Day 5:</strong> 科里亚克民俗村 → 温泉</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Murmansk -->
+          <a href="https://www.booking.com/searchresults.html?ss=%D0%9C%D1%83%D1%80%D0%BC%D0%B0%D0%BD%D1%81%D0%BA&aid=YOUR_BOOKING_AID" target="_blank" rel="nofollow sponsored" class="affiliate-btn">🏨 搜索摩尔曼斯克酒店 · Booking 最低价保证</a>
+    <div class="dest-card reveal">
+      <div class="dest-img" style="background:#3a4a5a;">
+        <div class="dest-img-wrap"><img src="images/murmansk.jpg" alt="摩尔曼斯克" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <span class="dest-badge">&#10052; 极光圣地</span>
+        <span class="dest-rating">&#9733; 4.7</span>
+      </div>
+      <div class="dest-body">
+        <h3>摩尔曼斯克</h3>
+        <div class="dest-en">Murmansk · &#1052;&#1091;&#1088;&#1084;&#1072;&#1085;&#1089;&#1082;</div>
+        <p class="dest-desc">北极圈内最大的城市，是追逐北极光的最佳地点之一。极夜期间的蓝色时刻、北极圈标志、冰原上的萨米文化——这里的一切都与极地有关。</p>
+        <div class="dest-tags">
+          <span>&#10024; 北极光（9-3月）</span>
+          <span>&#127361; 极夜蓝调</span>
+          <span>&#9962; 列宁号核破冰船</span>
+          <span>&#127761; 萨米村</span>
+        </div>
+        <div class="route-box">
+          <h4>&#128205; 建议游玩 2-3 天</h4>
+          <p><strong>Day 1:</strong> 摩尔曼斯克市区 → 列宁号核动力破冰船博物馆<br>
+          <strong>Day 2:</strong> 萨米民俗村 → 哈士奇雪橇 → 夜间追逐极光<br>
+          <strong>Day 3:</strong> 捷里别尔卡（北冰洋小镇）→ 返回</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Itinerary -->
+<section id="itinerary" style="background: var(--bg-dark); max-width: 100%; padding: 100px 40px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="section-label reveal">推荐路线</div>
+    <h2 class="section-title reveal">14 天穿越俄罗斯<br><em>经典西东线</em></h2>
+    <p class="section-sub reveal">一条串联俄罗斯最精华景点的路线，从莫斯科出发一路向东到贝加尔湖。</p>
+
+    <div class="itinerary reveal">
+      <div class="itin-card">
+        <div class="itin-day"><div class="num">1</div><div class="label">抵达</div></div>
+        <div class="itin-content">
+          <h4>莫斯科 · 初识红场</h4>
+          <p>抵达莫斯科，入住市中心酒店。傍晚漫步红场，欣赏圣瓦西里大教堂夜景，在古姆百货品尝俄式冰淇淋。</p>
+          <div class="itin-tags"><span>&#127968; 莫斯科</span><span>&#127926; 红场夜景</span></div>
+        </div>
+      </div>
+      <div class="itin-card">
+        <div class="itin-day"><div class="num">2-3</div><div class="label">探索</div></div>
+        <div class="itin-content">
+          <h4>莫斯科 · 克里姆林宫与莫斯科河</h4>
+          <p>深度游览克里姆林宫建筑群、参观军械库博物馆、特列季亚科夫画廊。第三天乘坐莫斯科地铁巡游，傍晚在莫斯科河上乘船看日落。</p>
+          <div class="itin-tags"><span>&#128332; 克里姆林宫</span><span>&#127917; 画廊</span><span>&#128653; 地铁</span></div>
+        </div>
+      </div>
+      <div class="itin-card">
+        <div class="itin-day"><div class="num">4-5</div><div class="label">高铁</div></div>
+        <div class="itin-content">
+          <h4>圣彼得堡 · 冬宫与白夜</h4>
+          <p>乘高铁前往圣彼得堡（约 4 小时）。参观世界四大博物馆之一的冬宫，漫步涅瓦大街。如逢夏季，体验白夜的奇妙——午夜天边依然泛白。</p>
+          <div class="itin-tags"><span>&#127917; 冬宫</span><span>&#127774; 白夜</span><span>&#128646; 高铁</span></div>
+        </div>
+      </div>
+      <div class="itin-card">
+        <div class="itin-day"><div class="num">6</div><div class="label">郊外</div></div>
+        <div class="itin-content">
+          <h4>圣彼得堡 · 夏宫与皇村</h4>
+          <p>前往彼得宫城（夏宫）欣赏大瀑布喷泉群，下午游览普希金市的叶卡捷琳娜宫，琥珀厅是必看之处。</p>
+          <div class="itin-tags"><span>&#127979; 夏宫</span><span>&#127968; 皇村</span><span>&#128142; 琥珀厅</span></div>
+        </div>
+      </div>
+      <div class="itin-card">
+        <div class="itin-day"><div class="num">7</div><div class="label">中转</div></div>
+        <div class="itin-content">
+          <h4>莫斯科 → 喀山 · 伏尔加河畔</h4>
+          <p>飞往喀山（约 1.5 小时），感受鞑靼斯坦的独特文化。库尔·沙里夫清真寺的蓝色穹顶令人过目难忘。</p>
+          <div class="itin-tags"><span>&#127760; 喀山</span><span>&#128330; 清真寺</span><span>&#127860; 鞑靼美食</span></div>
+        </div>
+      </div>
+      <div class="itin-card">
+        <div class="itin-day"><div class="num">8-9</div><div class="label">穿越</div></div>
+        <div class="itin-content">
+          <h4>火车穿越西伯利亚 · 叶卡捷琳堡</h4>
+          <p>乘坐 Trans-Siberian 火车前往叶卡捷琳堡（约 8 小时），在欧亚分界线纪念碑打卡——一脚跨两大洲。继续东行，沿途欣赏乌拉尔山脉的壮阔风光。</p>
+          <div class="itin-tags"><span>&#128646; 西伯利亚铁路</span><span>&#127758; 欧亚分界</span><span>&#127776; 乌拉尔山脉</span></div>
+        </div>
+      </div>
+      <div class="itin-card">
+        <div class="itin-day"><div class="num">10-13</div><div class="label">抵达</div></div>
+        <div class="itin-content">
+          <h4>贝加尔湖 · 西伯利亚的蓝眼睛</h4>
+          <p>抵达伊尔库茨克，前往贝加尔湖。在奥尔洪岛感受萨满教的古老力量，乘坐环湖火车欣赏沿途壮美风光。冬季可体验蓝冰徒步和狗拉雪橇。</p>
+          <div class="itin-tags"><span>&#127754; 贝加尔湖</span><span>&#10052; 蓝冰</span><span>&#128675; 环湖火车</span></div>
+        </div>
+      </div>
+      <div class="itin-card">
+        <div class="itin-day"><div class="num">14</div><div class="label">返程</div></div>
+        <div class="itin-content">
+          <h4>伊尔库茨克 · 安加拉河畔告别</h4>
+          <p>在伊尔库茨克做最后的漫步：十二月党人博物馆、安加拉河畔的日落。从伊尔库茨克机场乘机返程，结束这场横跨欧亚大陆的史诗之旅。</p>
+          <div class="itin-tags"><span>&#9992; 返程</span><span>&#127968; 伊尔库茨克</span><span>&#128151; 难忘之旅</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tips -->
+<section id="tips">
+  <div class="section-label reveal">旅行贴士</div>
+  <h2 class="section-title reveal">出发前你需要 <em>知道</em> 的</h2>
+  <p class="section-sub reveal">一些实用信息，让你的俄罗斯之旅更顺畅。</p>
+  <div class="tips-grid">
+    <div class="tip-card reveal">
+      <div class="tip-icon">&#128196;</div>
+      <h4>签证与证件</h4>
+      <p>中国公民前往俄罗斯需办理签证。电子签证（e-Visa）适用于部分地区和短期停留。建议提前 1-2 个月提交申请，确保护照有效期超过 6 个月。入境需填写移民卡，保管好出境联。</p>
+    </div>
+    <div class="tip-card reveal">
+      <div class="tip-icon">&#128176;</div>
+      <h4>货币与支付</h4>
+      <p>俄罗斯卢布（RUB）为当地货币。建议携带少量美元/欧元现金以备兑换。Visa/Mastercard 在大型商场和酒店可正常使用，但一些小店和偏远地区只收现金。支付宝/微信支付在莫斯科和圣彼得堡部分场所可用。</p>
+    </div>
+    <div class="tip-card reveal">
+      <div class="tip-icon">&#127760;</div>
+      <h4>语言与通讯</h4>
+      <p>英语普及率不高，建议提前下载翻译 APP（Google Translate 或 Yandex Translate）。推荐购买当地电话卡（MTS、Beeline 或 MegaFon），或提前开通国际漫游。大部分公共场所覆盖免费 Wi-Fi。</p>
+    </div>
+    <div class="tip-card reveal">
+      <div class="tip-icon">&#127777;</div>
+      <h4>最佳旅行季节</h4>
+      <p><strong>夏季（6-8月）：</strong>圣彼得堡白夜节（最浪漫的季节）<br>
+      <strong>秋季（9-10月）：</strong>金秋红叶，游客较少<br>
+      <strong>冬季（12-2月）：</strong>莫斯科圣诞集市，贝加尔湖蓝冰<br>
+      <strong>春季（3-5月）：</strong>极光尾声，冰雪消融</p>
+    </div>
+    <div class="tip-card reveal">
+      <div class="tip-icon">&#127860;</div>
+      <h4>不可错过的美食</h4>
+      <p>罗宋汤、黑面包、俄式煎饼（Blini）、鱼子酱、酸奶油、格瓦斯、俄罗斯蜂蜜蛋糕。在莫斯科推荐尝试图兰朵餐厅的皇家晚餐，在圣彼得堡可以体验地道的俄罗斯浴室后的伏特加配腌黄瓜。</p>
+    </div>
+    <div class="tip-card reveal">
+      <div class="tip-icon">&#128694;</div>
+      <h4>交通攻略</h4>
+      <p>城市之间推荐乘坐高铁（莫斯科至圣彼得堡 4 小时）或俄航国内航班。Trans-Siberian 火车需提前购票，推荐选择包厢（Kupe）等级。市内交通地铁是最便捷的方式，莫斯科地铁本身就是一座地下艺术宫殿。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Strip -->
+<div style="padding: 0 40px 60px; max-width: 1200px; margin: 0 auto;">
+  <div class="section-label reveal">精彩瞬间</div>
+  <div class="gallery-strip reveal">
+    <div class="gallery-item"><div class="dest-img-wrap"><img src="images/moscow.jpg" alt="莫斯科" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+    <div class="gallery-item"><div class="dest-img-wrap"><img src="images/st-petersburg.jpg" alt="圣彼得堡" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+    <div class="gallery-item"><div class="dest-img-wrap"><img src="images/golden-ring.jpg" alt="金环城市" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+    <div class="gallery-item"><div class="dest-img-wrap"><img src="images/sochi.jpg" alt="索契" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+    <div class="gallery-item"><div class="dest-img-wrap"><img src="images/baikal.jpg" alt="贝加尔湖" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+    <div class="gallery-item"><div class="dest-img-wrap"><img src="images/kamchatka.jpg" alt="堪察加半岛" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p><a href="#" onclick="document.getElementById('affiliate-disclosure').style.display='block';return false;" style="color:var(--warning);text-decoration:underline;font-size:12px;">⚖ 联盟营销声明</a></p>
+  <div id="affiliate-disclosure" style="display:none;margin-top:10px;padding:12px 16px;background:rgba(255,255,255,0.05);border-radius:8px;font-size:11px;color:var(--text-muted);max-width:600px;margin-left:auto;margin-right:auto;text-align:left;line-height:1.6;">
+    本站部分链接为联盟营销链接。当您通过这些链接预订酒店、机票或体验时，我们可能获得小额佣金，这不会影响您的购买价格。我们仅推荐亲身体验过或经过严格筛选的服务。感谢您的支持！
+  </div>
+  <br>
+  <strong>&#127482;&#127466; 逐俄之旅</strong> &mdash; 用心记录俄罗斯的每一面<br>
+  <span style="opacity:0.5;">数据仅供参考，出行前请查证最新旅行信息 · 2026</span>
+
+<div class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:white;border:1.5px solid #e0e0e0;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999;font-size:20px;box-shadow:0 2px 12px rgba(0,0,0,0.08);opacity:0.85;transition:all 0.3s;" onmouseover="this.style.opacity='1';this.style.transform='translateY(-2px)';" onmouseout="this.style.opacity='0.85';this.style.transform='none';">↑</div>
+</footer>
+
+<!-- Scroll Reveal -->
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+<!-- Travelpayouts 机票搜索脚本 -->
+<script>
+var TP_MARKER = 'YOUR_MARKER'; /* ← 替换为你的 Travelpayouts marker */
+function searchFlights() {
+  var from = document.getElementById('ad-from').value;
+  var to = document.getElementById('ad-to').value;
+  window.open('https://tp.media/r?marker=' + TP_MARKER + '&origin=' + from + '&destination=' + to + '&p=1&u=1', '_blank');
+}
+</script>
+
+<script>
+function searchDest() {
+  var q = document.querySelector('.hero-search input').value.trim().toLowerCase();
+  var map = {
+    '莫斯科':'moscow', 'moscow':'moscow',
+    '圣彼得堡':'petersburg', 'petersburg':'petersburg', '圣':'petersburg',
+    '金环':'golden-ring', 'golden':'golden-ring', '苏兹达尔':'golden-ring',
+    '喀山':'kazan', 'kazan':'kazan',
+    '索契':'sochi', 'sochi':'sochi',
+    '贝加尔':'baikal', 'baikal':'baikal', '贝加尔湖':'baikal',
+    '堪察加':'kamchatka', 'kamchatka':'kamchatka',
+    '摩尔曼斯克':'murmansk', 'murmansk':'murmansk', '极光':'murmansk',
+  };
+  var target = map[q];
+  if (target) {
+    var el = document.getElementById(target);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } else {
+    alert('试试搜索：莫斯科、贝加尔湖、极光、索契...');
+  }
+}
+
+// Back to top visibility
+var btt = document.querySelector('.back-to-top');
+if (btt) {
+  window.addEventListener('scroll', function() {
+    btt.style.display = window.scrollY > 400 ? 'flex' : 'none';
+  });
+  btt.style.display = 'none';
+}
+</script>
+</body>
+</html>
