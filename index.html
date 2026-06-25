@@ -3,7 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>逐俄之旅 — 俄罗斯深度旅行攻略</title>
+
+<!-- ===== SEO 元数据（Google Ads 着陆页质量得分相关） ===== -->
+<title>逐俄之旅 · 俄罗斯深度旅行攻略 | 莫斯科·贝加尔湖·堪察加</title>
+<meta name="description" content="九千公里横跨十一个时区的俄罗斯深度旅行攻略。8 大必去目的地、14 天经典西东线路线、签证货币美食实用贴士，并可在 Booking.com 查询最优酒店价格。">
+<meta name="keywords" content="俄罗斯旅游,俄罗斯攻略,莫斯科旅游,圣彼得堡,贝加尔湖,堪察加,摩尔曼斯克极光,西伯利亚铁路,Booking酒店预订">
+<meta name="author" content="逐俄之旅">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://plivet222222.github.io/travel-russia/">
+
+<!-- ===== Open Graph（社交分享 / 广告预览） ===== -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="逐俄之旅">
+<meta property="og:title" content="逐俄之旅 · 俄罗斯深度旅行攻略">
+<meta property="og:description" content="8 大必去目的地、14 天经典路线、签证货币美食贴士。横跨欧亚大陆的史诗之旅，从这里开始。">
+<meta property="og:url" content="https://plivet222222.github.io/travel-russia/">
+<meta property="og:image" content="https://plivet222222.github.io/travel-russia/images/kamchatka.jpg">
+
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="逐俄之旅 · 俄罗斯深度旅行攻略">
+<meta name="twitter:description" content="8 大必去目的地、14 天经典路线、签证货币美食贴士。">
+<meta name="twitter:image" content="https://plivet222222.github.io/travel-russia/images/kamchatka.jpg">
+
+<!-- ===== 结构化数据（帮助 Google 理解页面） ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelGuide",
+  "name": "逐俄之旅 · 俄罗斯深度旅行攻略",
+  "description": "九千公里横跨十一个时区的俄罗斯深度旅行攻略，涵盖 8 大目的地与 14 天经典路线。",
+  "inLanguage": "zh-CN",
+  "about": {
+    "@type": "Country",
+    "name": "俄罗斯"
+  }
+}
+</script>
+
 <style>
   /* ============================================================
      设计系统 — Apple Design Language
@@ -363,23 +401,143 @@
   .gallery-item img{ width:100%; height:100%; object-fit:cover; }
 
   /* ============================================================
-     页脚
+     页脚 — Microsoft UHF 通用页脚风格
      ============================================================ */
-  footer{
-    background: var(--bg-dark);
-    padding: 40px 22px 30px;
-    border-top: 1px solid var(--border);
-    font-size: 12px; color: var(--text-4);
-    line-height: 1.6;
+  .ms-footer{
+    background: #f2f2f2;
+    color: #616161;
+    font-size: 11px;
+    line-height: 16px;
+    padding: 32px 0 12px;
+    margin-top: 0;
   }
-  footer .container{ max-width: 980px; }
-  footer a{ color: var(--link); }
-  footer .foot-top{ margin-bottom: 18px; }
-  footer .foot-legal{
-    border-top: 1px solid var(--border);
-    padding-top: 18px;
-    display:flex; justify-content:space-between;
-    flex-wrap: wrap; gap: 10px;
+  .ms-footer a{
+    color: #616161;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 24px 8px 0;
+  }
+  .ms-footer a:hover{
+    text-decoration: underline;
+    color: #000;
+  }
+  .ms-footer .ms-footer-inner{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  /* 多列分类导航 */
+  .ms-footer-nav{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px 32px;
+    padding-bottom: 12px;
+  }
+  .ms-footer-col h4{
+    font-size: 15px;
+    font-weight: 600;
+    color: #171717;
+    margin: 8px 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .ms-footer-col ul{ list-style: none; padding: 0; margin: 0; }
+  .ms-footer-col li a{ font-size: 11px; }
+
+  /* 底部法律行 */
+  .ms-footer-base{
+    border-top: 1px solid #e0e0e0;
+    margin-top: 8px;
+    padding: 16px 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 8px;
+  }
+  .ms-footer-links{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ms-footer-links a{
+    font-size: 11px;
+    padding: 8px 16px 8px 0;
+  }
+  .ms-footer-links a:first-child{ padding-left: 0; }
+  .ms-footer-locale{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .ms-footer-locale a{
+    padding: 8px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .ms-footer-copy{
+    font-size: 11px;
+    color: #616161;
+    padding: 8px 0;
+  }
+  @media (max-width: 833px){
+    .ms-footer-nav{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px){
+    .ms-footer-nav{ grid-template-columns: 1fr; }
+  }
+
+  /* ============================================================
+     顶部联盟声明横幅（Google Ads 合规：联盟关系须显眼披露）
+     ============================================================ */
+  .disclosure-bar{
+    background: #1d1d1f; color: #f5f5f7;
+    font-size: 13px; text-align: center;
+    padding: 9px 22px; line-height: 1.4;
+    position: relative; z-index: 10000;
+  }
+  .disclosure-bar a{ color:#2997ff; text-decoration: underline; }
+  .disclosure-bar .icon{ margin-right: 4px; }
+
+  /* 联盟 CTA 预订按钮 */
+  .book-cta{
+    display:inline-flex; align-items:center; gap:6px;
+    background: #003580; color:#fff !important;
+    font-size: 14px; font-weight: 600;
+    padding: 11px 20px; border-radius: 10px;
+    text-decoration: none !important;
+    transition: background .2s, transform .1s;
+    margin-top: 4px;
+  }
+  .book-cta:hover{ background:#0049b0; transform: translateY(-1px); }
+  .book-cta::after{ content:' ↗'; font-size: 13px; }
+  .affiliate-tag{
+    display:inline-block;
+    font-size: 11px; color:#86868b;
+    margin-top: 8px; margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* Cookie 同意横幅（轻量，不强制弹窗） */
+  .cookie-bar{
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: rgba(29,29,31,0.96);
+    backdrop-filter: blur(12px);
+    color: #f5f5f7;
+    padding: 14px 22px;
+    display: flex; align-items: center; justify-content: center;
+    gap: 16px; flex-wrap: wrap;
+    font-size: 13px; z-index: 9998;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    transition: transform .4s cubic-bezier(0.4,0,0.2,1);
+  }
+  .cookie-bar.hidden{ transform: translateY(100%); }
+  .cookie-bar a{ color:#2997ff; text-decoration: underline; }
+  .cookie-bar .cookie-btn{
+    background:#fff; color:#1d1d1f;
+    border:none; cursor:pointer; font-family:inherit;
+    font-size:13px; font-weight:600;
+    padding: 7px 16px; border-radius: 980px;
   }
 
   /* ============================================================
@@ -405,6 +563,12 @@
 </style>
 </head>
 <body>
+
+<!-- ===== 顶部联盟声明横幅（合规：联盟关系显眼披露） ===== -->
+<div class="disclosure-bar">
+  <span class="icon">⚠</span> 本页含联盟营销链接：通过链接预订酒店我们可能获得佣金，且不增加你的费用。
+  <a href="affiliate-disclosure.html">查看完整声明 ›</a>
+</div>
 
 <!-- ===== 导航栏 ===== -->
 <nav class="nav" id="nav">
@@ -469,6 +633,7 @@
             <strong>Day 2:</strong> 克里姆林宫 → 基督救世主大教堂 → 特列季亚科夫画廊<br>
             <strong>Day 3:</strong> 莫斯科地铁巡游 → 麻雀山观景台 → 莫斯科河游船</p>
           </div>
+          <a href="https://www.booking.com/searchresults.html?ss=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&aid=YOUR_BOOKING_AID" target="_blank" rel="sponsored nofollow noopener" class="book-cta">在 Booking.com 查看莫斯科酒店价格</a><span class="affiliate-tag">联盟链接</span>
         </div>
       </div>
 
@@ -490,6 +655,7 @@
             <strong>Day 2:</strong> 彼得保罗要塞 → 圣以撒大教堂 → 涅瓦河游船<br>
             <strong>Day 3:</strong> 夏宫/皇村一日游，傍晚看开桥</p>
           </div>
+          <a href="https://www.booking.com/searchresults.html?ss=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3&aid=YOUR_BOOKING_AID" target="_blank" rel="sponsored nofollow noopener" class="book-cta">在 Booking.com 查看圣彼得堡酒店价格</a><span class="affiliate-tag">联盟链接</span>
         </div>
       </div>
 
@@ -509,6 +675,7 @@
             <p><strong>Day 1:</strong> 弗拉基米尔金门 → 圣母安息大教堂 → 苏兹达尔克里姆林宫<br>
             <strong>Day 2:</strong> 木建筑博物馆 → 圣欧菲米乌斯修道院 → 乡村田园</p>
           </div>
+          <a href="https://www.booking.com/searchresults.html?ss=%D0%A1%D1%83%D0%B7%D0%B4%D0%B0%D0%BB%D1%8C&aid=YOUR_BOOKING_AID" target="_blank" rel="sponsored nofollow noopener" class="book-cta">在 Booking.com 查看金环酒店价格</a><span class="affiliate-tag">联盟链接</span>
         </div>
       </div>
 
@@ -528,6 +695,7 @@
             <p><strong>Day 1:</strong> 喀山克里姆林宫 → 库尔·沙里夫清真寺 → 鞑靼餐厅<br>
             <strong>Day 2:</strong> 鲍曼街步行 → 喀山沿河公园 → 千年桥</p>
           </div>
+          <a href="https://www.booking.com/searchresults.html?ss=%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C&aid=YOUR_BOOKING_AID" target="_blank" rel="sponsored nofollow noopener" class="book-cta">在 Booking.com 查看喀山酒店价格</a><span class="affiliate-tag">联盟链接</span>
         </div>
       </div>
 
@@ -548,6 +716,7 @@
             <strong>Day 2:</strong> 红草地雪山 → 滑雪/缆车 → 高加索山景<br>
             <strong>Day 3:</strong> 斯大林别墅 → 植物园 → 海滨晚餐</p>
           </div>
+          <a href="https://www.booking.com/searchresults.html?ss=%D0%A1%D0%BE%D1%87%D0%B8&aid=YOUR_BOOKING_AID" target="_blank" rel="sponsored nofollow noopener" class="book-cta">在 Booking.com 查看索契酒店价格</a><span class="affiliate-tag">联盟链接</span>
         </div>
       </div>
 
@@ -569,6 +738,7 @@
             <strong>Day 3:</strong> 胡日尔村 → 萨满岩 → 北线蓝冰（冬季）<br>
             <strong>Day 4:</strong> 环湖火车 / 南线 / 返回伊尔库茨克</p>
           </div>
+          <a href="https://www.booking.com/searchresults.html?ss=%D0%98%D1%80%D0%BA%D1%83%D1%82%D1%81%D0%BA&aid=YOUR_BOOKING_AID" target="_blank" rel="sponsored nofollow noopener" class="book-cta">在 Booking.com 查看贝加尔湖酒店价格</a><span class="affiliate-tag">联盟链接</span>
         </div>
       </div>
 
@@ -590,6 +760,7 @@
             <strong>Day 3-5:</strong> 攀登阿瓦查/科里亚克火山 → 间歇泉谷直升机<br>
             <strong>Day 6-7:</strong> 库页湖看棕熊捕鱼 → 温泉</p>
           </div>
+          <a href="https://www.booking.com/searchresults.html?ss=%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%BF%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D1%81%D0%BA-%D0%9A%D0%B0%D0%BC%D1%87%D0%B0%D1%82%D1%81%D0%BA%D0%B8%D0%B9&aid=YOUR_BOOKING_AID" target="_blank" rel="sponsored nofollow noopener" class="book-cta">在 Booking.com 查看堪察加酒店价格</a><span class="affiliate-tag">联盟链接</span>
         </div>
       </div>
 
@@ -611,6 +782,7 @@
             <strong>Day 2:</strong> 萨米村体验 → 驯鹿雪橇 → 追极光<br>
             <strong>Day 3:</strong> 列宁号破冰船 → 返程</p>
           </div>
+          <a href="https://www.booking.com/searchresults.html?ss=%D0%9C%D1%83%D1%80%D0%BC%D0%B0%D0%BD%D1%81%D0%BA&aid=YOUR_BOOKING_AID" target="_blank" rel="sponsored nofollow noopener" class="book-cta">在 Booking.com 查看摩尔曼斯克酒店价格</a><span class="affiliate-tag">联盟链接</span>
         </div>
       </div>
 
@@ -770,27 +942,74 @@
   </div>
 </section>
 
-<!-- ===== 页脚 ===== -->
-<footer>
-  <div class="container">
-    <div class="foot-top">
-      <p>本页面为学习/设计演示用途，按照 Apple 官网设计风格重构。所有图片与内容版权归原作者所有。</p>
-      <p style="margin-top:8px;"><a href="#" id="affiliate-link" style="color:#6e6e73;">⚖ 联盟营销声明</a></p>
+<!-- ===== 页脚（Microsoft UHF 通用页脚风格） ===== -->
+<footer class="ms-footer">
+  <div class="ms-footer-inner">
+
+    <!-- 多列分类导航 -->
+    <nav class="ms-footer-nav">
+      <div class="ms-footer-col">
+        <h4>探索</h4>
+        <ul>
+          <li><a href="index.html#destinations">目的地</a></li>
+          <li><a href="index.html#itinerary">14 天行程</a></li>
+          <li><a href="index.html#tips">旅行贴士</a></li>
+          <li><a href="index.html#gallery">精彩图集</a></li>
+        </ul>
+      </div>
+      <div class="ms-footer-col">
+        <h4>热门目的地</h4>
+        <ul>
+          <li><a href="index.html#destinations">莫斯科</a></li>
+          <li><a href="index.html#destinations">圣彼得堡</a></li>
+          <li><a href="index.html#destinations">贝加尔湖</a></li>
+          <li><a href="index.html#destinations">堪察加半岛</a></li>
+        </ul>
+      </div>
+      <div class="ms-footer-col">
+        <h4>预订服务</h4>
+        <ul>
+          <li><a href="https://www.booking.com" target="_blank" rel="sponsored nofollow noopener">酒店预订</a></li>
+          <li><a href="index.html#itinerary">路线规划</a></li>
+          <li><a href="index.html#tips">签证攻略</a></li>
+          <li><a href="index.html#tips">交通指南</a></li>
+        </ul>
+      </div>
+      <div class="ms-footer-col">
+        <h4>关于与法律</h4>
+        <ul>
+          <li><a href="mailto:contact@yourdomain.com">联系我们</a></li>
+          <li><a href="privacy.html">隐私政策</a></li>
+          <li><a href="affiliate-disclosure.html">联盟声明</a></li>
+          <li><a href="mailto:contact@yourdomain.com">问题反馈</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- 底部法律行 + 地区选择器 -->
+    <div class="ms-footer-base">
+      <div class="ms-footer-links">
+        <a href="mailto:contact@yourdomain.com">联系【你的公司/个人名称】</a>
+        <a href="privacy.html">隐私和 Cookie</a>
+        <a href="affiliate-disclosure.html">联盟营销声明</a>
+        <a href="mailto:contact@yourdomain.com">使用条款</a>
+        <a href="mailto:contact@yourdomain.com">商标</a>
+      </div>
+      <div class="ms-footer-locale">
+        <a href="#" onclick="return false;" title="中国大陆">🌐 中文（简体）· 中国</a>
+      </div>
     </div>
-    <div class="foot-legal">
-      <span>© 2024 逐俄之旅 · Travel Russia Guide</span>
-      <span>由 ZCode · 按苹果设计风格重构</span>
-    </div>
+    <div class="ms-footer-copy">© 2024 逐俄之旅 · Travel Russia Guide. 保留所有权利。本站为独立旅行内容站，非任何酒店或预订平台的官方代理。</div>
+
   </div>
 </footer>
 
-<!-- ===== 联盟声明弹层 ===== -->
-<div id="affiliate-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);z-index:10000;align-items:center;justify-content:center;padding:22px;">
-  <div style="background:#fff;border-radius:18px;max-width:480px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
-    <h3 style="font-size:19px;font-weight:600;margin-bottom:12px;">联盟营销声明</h3>
-    <p style="font-size:14px;color:#6e6e73;line-height:1.55;">本页面中的部分预订链接可能为联盟营销链接，即当你通过这些链接预订酒店或服务时，我们可能获得少量佣金，且不会增加你的任何额外费用。这有助于我们持续提供优质内容。感谢你的支持。</p>
-    <button onclick="document.getElementById('affiliate-modal').style.display='none'" style="margin-top:18px;background:#0066cc;color:#fff;border:none;padding:10px 22px;border-radius:980px;font-size:15px;cursor:pointer;">明白了</button>
-  </div>
+<!-- ===== Cookie 同意横幅（轻量，不干扰返回） ===== -->
+<div class="cookie-bar" id="cookie-bar">
+  <span>🍪 本网站使用 Cookie 提供更好的浏览体验与分析数据（含第三方广告与分析 Cookie）。
+    <a href="privacy.html">了解 Cookie 政策 ›</a>
+  </span>
+  <button class="cookie-btn" id="cookie-accept">我知道了</button>
 </div>
 
 <script>
@@ -810,11 +1029,19 @@
     }
   });
 
-  // 联盟声明
-  document.getElementById('affiliate-link').addEventListener('click', (e)=>{
-    e.preventDefault();
-    document.getElementById('affiliate-modal').style.display = 'flex';
-  });
+  // Cookie 同意横幅
+  (function(){
+    const bar = document.getElementById('cookie-bar');
+    const btn = document.getElementById('cookie-accept');
+    if (localStorage.getItem('cookieAccepted') === '1') {
+      bar.classList.add('hidden');
+      return;
+    }
+    btn.addEventListener('click', ()=>{
+      bar.classList.add('hidden');
+      localStorage.setItem('cookieAccepted', '1');
+    });
+  })();
 </script>
 </body>
 </html>
